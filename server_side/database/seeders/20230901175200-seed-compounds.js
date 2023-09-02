@@ -17,10 +17,10 @@ module.exports = {
       updatedAt: new Date()
     }));
 
-    await queryInterface.bulkInsert('chemical-compounds', compoundData, {});
+    await queryInterface.bulkInsert('chemicalCompounds', compoundData, {});
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('chemical-compounds', null, {});
+    await queryInterface.bulkDelete('chemicalCompounds', null, {});
   }
 };
