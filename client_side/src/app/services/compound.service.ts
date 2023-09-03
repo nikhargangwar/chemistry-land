@@ -36,4 +36,9 @@ export class CompoundService {
     const url = `${this.apiUrl+'compounds'}/${compound.id}`;
     return this.http.delete<Compound>(url);
   };
+
+  updateCompound(compound: Compound): Observable<Compound> {
+    const url = `${this.apiUrl+'compounds'}/${compound.id}`;
+    return this.http.put<Compound>(url, compound, httpOptions);
+  };
 }

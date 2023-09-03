@@ -10,6 +10,9 @@ import { Compound } from 'src/app/types/compound';
 export class UpdateCompoundComponent implements OnInit  {
   id!: string;
   compound!: Compound;
+  name!: string;
+  description!: string;
+  image!: string;
 
   constructor(private route: ActivatedRoute, private compoundService: CompoundService, private router: Router) { }
 
@@ -19,4 +22,28 @@ export class UpdateCompoundComponent implements OnInit  {
      (this.compound = compound));
   }; 
 
+  
+  onSubmit() {
+    // if ( !this.name || !this.description || !this.image) {
+    //   alert('Please fill in all fields');
+    //   return;
+    // }
+
+    const newCompound = {
+      id:this.id,
+      name: this.name,
+      description: this.description,
+      image: this.image
+    };
+
+    this.compoundService.updateCompound(newCompound).subscribe(() => {
+      alert("Compound Updated");
+      this.router.navigate(['/compounds/'+this.id]);
+
+    });
+    
+    this.name = '';
+    this.description = '';
+    this.image = '';
+  }
 }

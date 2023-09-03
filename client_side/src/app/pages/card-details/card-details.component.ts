@@ -35,4 +35,9 @@ constructor(private compoundService: CompoundService, private route: ActivatedRo
     console.log("sad",compound.id);
     this.router.navigate(['/compounds/update/'+compound.id]);
   }
+
+  moveToHomePage(){
+    this.router.navigate(['/compounds/']);
+   }
+
 }

@@ -1,4 +1,8 @@
 <app-header></app-header>
+<div class="form-heading">
+  <h1>Add Compound Details</h1>
+
+</div>
 <form class="form" (ngSubmit)="onSubmit()">
     <!-- <h3>{{operation}} Compound</h3> -->
     <div class="form-control">
@@ -11,16 +15,7 @@
         placeholder="Add Compound Name"
       />
     </div>
-    <div class="form-control">
-      <label for="compound-description">Compound Description</label>
-      <textarea
-        name="description"
-        id="compound-description"
-        [(ngModel)]="description"
-        placeholder="Add Compound Description"
-        rows="3"
-      ></textarea>
-    </div>
+
     <div class="form-control">
       <label for="image-url">Image URL</label>
       <input
@@ -31,7 +26,19 @@
         [(ngModel)]="image"
       />
     </div>
-    <input type="submit"  class="btn" />
-    <button class="btn" [routerLink]="['/compounds']">Go Back</button>
-  </form>
+    <div class="form-control">
+      <label for="compound-description">Compound Description</label>
+      <textarea
+        name="description"
+        id="compound-description"
+        [(ngModel)]="description"
+        placeholder="Add Compound Description"
+        rows="3"
+      ></textarea>
+    </div>
+    <div class="function-button">
+      <input type="submit"  class="btn1" />
+      <button class="btn2" [routerLink]="['/compounds']">Go Back</button>  
+    </div>
+    </form>
 
