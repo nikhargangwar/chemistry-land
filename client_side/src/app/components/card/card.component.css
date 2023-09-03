@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
+.card-container{
+    border: 1px sol/id black;
+    height: 250px;
+    width: 200px;
+    background-color: #83CC98;
+    border-radius: 15px;
+    align-items: center;
+
+}
+.card-image-container{
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-image{
+    margin-top: 30px;
+    height: 100%;
+    width: 80%;
+    background-color: white;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.card-name-container{
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card-name{
+    font-family: 'Roboto', sans-serif;
+    color:#00857A;
+
+}
