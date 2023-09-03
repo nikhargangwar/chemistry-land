@@ -2,11 +2,17 @@
 <div class="container-outer">
     <div class="container-inner">
         
-       <div *ngFor="let card of getJsonValue">
+       <div *ngFor="let card of compounds">
         <app-card [name]="card.name" [image]="card.image" [routerLink]="['/compounds', card.id]"></app-card>
         <!-- <div>{{card.name}}</div>
         <div>{{card.image}}</div>
         <div>{{card.description}}</div> -->
         </div>
     </div>
+
+    <div class="pages">
+        <button *ngIf="page!==1" [routerLink]="['/compounds']" [queryParams]="{pg: page-1}"><</button>
+        {{ page }} / {{ totalPages }}
+        <button *ngIf="page!==totalPages" [routerLink]="['/compounds']" [queryParams]="{pg: page+1}">></button>
+      </div>
 </div>

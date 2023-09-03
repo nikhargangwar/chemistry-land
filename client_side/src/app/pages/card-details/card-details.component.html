@@ -14,10 +14,14 @@
         </div>
         <div class="edit-options">
             <div class="delete-button">
-                <button>Delete</button>
+                <button 
+                (click)="deleteCompound(compoundData)"
+                >Delete</button>
             </div>
             <div class="update-button">
-                <button>Update</button>
+                <button
+                (click)="updateCompound(compoundData)"
+                >Update</button>
             </div>
         </div>
         

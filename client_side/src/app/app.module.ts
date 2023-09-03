@@ -11,6 +11,7 @@ import { CardDetailsComponent } from './pages/card-details/card-details.componen
 import { HomeComponent } from './pages/home/home.component';
 import { AddNewCompoundComponent } from './pages/add-new-compound/add-new-compound.component';
 import { FormsModule } from '@angular/forms';
+import { UpdateCompoundComponent } from './pages/update-compound/update-compound.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     CardComponent,
     CardDetailsComponent,
     HomeComponent,
-    AddNewCompoundComponent
+    AddNewCompoundComponent,
+    UpdateCompoundComponent
   ],
   imports: [
     BrowserModule,

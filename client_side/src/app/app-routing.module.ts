@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { CardDetailsComponent } from './pages/card-details/card-details.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AddNewCompoundComponent } from './pages/add-new-compound/add-new-compound.component';
+import { UpdateCompoundComponent } from './pages/update-compound/update-compound.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
     component: CardDetailsComponent
   }
 ,
+{
+  path:'compounds/update/:id',
+  component: UpdateCompoundComponent
+},
   {
     path: 'compounds',
     component: HomeComponent

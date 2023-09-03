@@ -18,9 +18,10 @@ export class CompoundService {
 
   constructor(private http:HttpClient) { }
 
-  getAllCompounds(): Observable<CompoundResponse> {
-    return this.http.get<CompoundResponse>(this.apiUrl+'compounds');
+  getAllCompounds(page:number): Observable<CompoundResponse> {
+    return this.http.get<CompoundResponse>(this.apiUrl + 'compounds?pg=' + page);
   };
+ 
 
   getCompoundById(id: string): Observable<Compound> {
     const url = `${this.apiUrl}`+'compounds'+`/${id}`;
@@ -30,4 +31,9 @@ export class CompoundService {
   addCompound(compound: Compound): Observable<Compound> {
     return this.http.post<Compound>(this.apiUrl+'compounds', compound, httpOptions);
   }
+
+  deleteCompound(compound: Compound): Observable<Compound> {
+    const url = `${this.apiUrl+'compounds'}/${compound.id}`;
+    return this.http.delete<Compound>(url);
+  };
 }
