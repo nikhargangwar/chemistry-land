@@ -1,18 +1,12 @@
 
 <div class="container-outer">
     <div class="container-inner">
-        <app-card></app-card>
-        <app-card></app-card>
-
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-
-        <app-card></app-card>
-        <app-card></app-card>
-
-        <app-card></app-card>
-
-       
+        
+       <div *ngFor="let card of getJsonValue">
+        <app-card [name]="card.name" [image]="card.image" [routerLink]="['/compounds', card.id]"></app-card>
+        <!-- <div>{{card.name}}</div>
+        <div>{{card.image}}</div>
+        <div>{{card.description}}</div> -->
+        </div>
     </div>
 </div>

@@ -23,6 +23,15 @@
     background-color: white;
     align-items: center;
     border-radius: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.card-image img {
+    width: 95%; /* Make the image take up the entire container width */
+    height: 95%; /* Make the image take up the entire container height */
+    object-fit: cover; /* Resize the image to cover the entire container while maintaining aspect ratio */
+  
 }
 
 .card-name-container{

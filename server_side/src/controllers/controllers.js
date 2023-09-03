@@ -13,7 +13,7 @@ const getAllCompoundsController = async(req,res)=>{
     if (compounds.rows.length === 0) {
       return res.status(404).json({ message: 'No compounds found' });
     }
-    res.status(200).json(compounds);
+    res.status(200).json(compounds.rows);
     }
     catch (err) {
         if (err instanceof HTTPError) {
@@ -33,7 +33,7 @@ const getCompoundByIdController = async(req,res)=>{
             return res.status(404).json({ message: 'Compound not found' });
           }
 
-    return res.send(compound);
+    return res.send(compound[0]);
     //return res.status(200).json({data:result});
     }
     catch (err) {

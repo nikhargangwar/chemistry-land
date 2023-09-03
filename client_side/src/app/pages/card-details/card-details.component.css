@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
+
+.container-outer{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-inner{
+    border: 4px solid #83CC98;
+    height: 60%;
+    width: 60%;
+    border-radius: 15px;
+    padding: 0px 30px 20px 30px ;
+}
+
+.uppar-inner-container{
+    height: 60%;
+    display: flex;
+}
+
+.compound-name{
+    height: 100%;
+    width: 70%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: 50px;
+    color: aliceblue;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.compound-image{
+    height: 80%;
+    width: 30%;
+    background-color: aliceblue;
+    margin: 30px;
+    border-radius: 15px;
+
+}
+.compound-image img{
+    width: 95%; /* Make the image take up the entire container width */
+    height: 95%; /* Make the image take up the entire container height */
+    object-fit: cover; /* Resize the image to cover the entire container while maintaining aspect ratio */
+  
+}
+.lower-inner-container{
+    height: 35%;
+    background-color: #83CC98;
+    border-radius: 15px;
+    color: #00857A;
+    /* color: azure; */
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    padding: 13px;
+}
+

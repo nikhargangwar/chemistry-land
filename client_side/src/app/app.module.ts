@@ -6,17 +6,23 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CardListComponent } from './components/card-list/card-list.component';
 import { CardComponent } from './components/card/card.component';
+import {HttpClientModule} from '@angular/common/http';
+import { CardDetailsComponent } from './pages/card-details/card-details.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     CardListComponent,
-    CardComponent
+    CardComponent,
+    CardDetailsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
