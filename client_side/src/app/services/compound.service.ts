@@ -3,6 +3,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CompoundResponse,Compound } from '../types/compound';
 
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -21,4 +26,8 @@ export class CompoundService {
     const url = `${this.apiUrl}`+'compounds'+`/${id}`;
     return this.http.get<Compound>(url);
   };
+
+  addCompound(compound: Compound): Observable<Compound> {
+    return this.http.post<Compound>(this.apiUrl+'compounds', compound, httpOptions);
+  }
 }

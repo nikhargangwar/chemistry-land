@@ -9,6 +9,9 @@ import { CardComponent } from './components/card/card.component';
 import {HttpClientModule} from '@angular/common/http';
 import { CardDetailsComponent } from './pages/card-details/card-details.component';
 import { HomeComponent } from './pages/home/home.component';
+import { AddNewCompoundComponent } from './pages/add-new-compound/add-new-compound.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -17,12 +20,14 @@ import { HomeComponent } from './pages/home/home.component';
     CardListComponent,
     CardComponent,
     CardDetailsComponent,
-    HomeComponent
+    HomeComponent,
+    AddNewCompoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
