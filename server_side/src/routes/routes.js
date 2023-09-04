@@ -1,17 +1,18 @@
 const express  = require('express');
 const  compoundsController =require('../controllers/controllers.js');
 const compoundRouter = express.Router();
+const { validateCompound, validateQuery, validateId } = require('../middlewares/middleware.js');
 
 
 
 //routes
-compoundRouter.get('/compounds',compoundsController.getAllCompoundsController);
-compoundRouter.get('/compounds/:id',compoundsController.getCompoundByIdController);
+compoundRouter.get('/compounds',validateQuery,compoundsController.getAllCompoundsController);
+compoundRouter.get('/compounds/:id',validateId,compoundsController.getCompoundByIdController);
 
 
-compoundRouter.post('/compounds',compoundsController.createNewCompoundController);
-compoundRouter.delete('/compounds/:id',compoundsController.deleteCompoundByIdController);
-compoundRouter.put('/compounds/:id',compoundsController.updateCompoundByIdController);
+compoundRouter.post('/compounds',validateCompound,compoundsController.createNewCompoundController);
+compoundRouter.delete('/compounds/:id',validateId,compoundsController.deleteCompoundByIdController);
+compoundRouter.put('/compounds/:id',validateId, validateCompound, compoundsController.updateCompoundByIdController);
 
 
 

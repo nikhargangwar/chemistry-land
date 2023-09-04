@@ -6,7 +6,7 @@ const getAllCompoundsController = async(req,res)=>{
     try{
 
     const page = req.query.pg ? parseInt(req.query.pg) : 1;
-    const limit = 10;
+    const limit = 8;
     const offset = (page - 1) * limit;
     const compounds = await compoundsServices.getAllCompounds(offset, limit);
 

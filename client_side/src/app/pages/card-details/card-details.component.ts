@@ -19,7 +19,7 @@ constructor(private compoundService: CompoundService, private route: ActivatedRo
   ngOnInit(): void {
     this.compoundId = this.route.snapshot.params['id'];
     this.compoundService.getCompoundById(this.compoundId).subscribe((data) => 
-    (this.compoundData = data));
+    (this.compoundData = data), (error) => this.router.navigate(['/404']));
 
   }
 

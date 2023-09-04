@@ -12,6 +12,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AddNewCompoundComponent } from './pages/add-new-compound/add-new-compound.component';
 import { FormsModule } from '@angular/forms';
 import { UpdateCompoundComponent } from './pages/update-compound/update-compound.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { UpdateCompoundComponent } from './pages/update-compound/update-compound
     CardDetailsComponent,
     HomeComponent,
     AddNewCompoundComponent,
-    UpdateCompoundComponent
+    UpdateCompoundComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

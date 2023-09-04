@@ -6,6 +6,7 @@ import { CardDetailsComponent } from './pages/card-details/card-details.componen
 import { HomeComponent } from './pages/home/home.component';
 import { AddNewCompoundComponent } from './pages/add-new-compound/add-new-compound.component';
 import { UpdateCompoundComponent } from './pages/update-compound/update-compound.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -25,7 +26,10 @@ const routes: Routes = [
   {
     path: 'compounds',
     component: HomeComponent
-  }
+  },
+  { path: '**', 
+  component:NotFoundComponent
+}
 
 ];
 

@@ -19,7 +19,7 @@ export class UpdateCompoundComponent implements OnInit  {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.compoundService.getCompoundById(this.id).subscribe((compound) =>
-     (this.compound = compound));
+     (this.compound = compound),error => this.router.navigate(['/404']));
   }; 
 
   
@@ -39,8 +39,7 @@ export class UpdateCompoundComponent implements OnInit  {
     this.compoundService.updateCompound(newCompound).subscribe(() => {
       alert("Compound Updated");
       this.router.navigate(['/compounds/'+this.id]);
-
-    });
+    }, error => alert(error.message));
     
     this.name = '';
     this.description = '';

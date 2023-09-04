@@ -33,7 +33,7 @@ export class AddNewCompoundComponent implements OnInit{
 
     this.compoundService.addCompound(newCompound).subscribe(() => {
       alert('Compound added!');
-    });
+    }, ((error) => alert(error.message)));
     
     this.name = '';
     this.description = '';
