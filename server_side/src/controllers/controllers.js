@@ -4,7 +4,6 @@ const compoundsServices = require( '../services/services.js');
 const getAllCompoundsController = async(req,res)=>{
 
     try{
-
     const page = req.query.pg ? parseInt(req.query.pg) : 1;
     const limit = 8;
     const offset = (page - 1) * limit;
@@ -16,9 +15,6 @@ const getAllCompoundsController = async(req,res)=>{
     res.status(200).json(compounds);
     }
     catch (err) {
-        if (err instanceof HTTPError) {
-            return res.status(err.statusCode).send({ message: err.message });
-        }
         res.status(500).send(err.message);
     }
 
@@ -37,9 +33,6 @@ const getCompoundByIdController = async(req,res)=>{
     //return res.status(200).json({data:result});
     }
     catch (err) {
-        if (err instanceof HTTPError) {
-            return res.status(err.statusCode).send({ message: err.message });
-        }
         res.status(500).send(err.message);
     }
 
@@ -52,9 +45,6 @@ const createNewCompoundController = async(req,res)=>{
         res.status(201).json(newCompound);
     }
     catch (err) {
-        if (err instanceof HTTPError) {
-            return res.status(err.statusCode).send({ message: err.message });
-        }
         res.status(500).send(err.message);
     }
 
@@ -65,15 +55,13 @@ const deleteCompoundByIdController = async(req,res)=>{
 
     try{
         const deletedCompound = await compoundsServices.deleteCompound(req.params.id);
+        console.log("okok");
         if (deletedCompound) {
             return res.status(200).json({ message: 'Compound deleted'});
           } 
           res.status(404).json({ message: 'Compound not found' });
     }
     catch (err) {
-        if (err instanceof HTTPError) {
-            return res.status(err.statusCode).send({ message: err.message });
-        }
         res.status(500).send(err.message);
     }
 
@@ -92,9 +80,7 @@ const updateCompoundByIdController = async(req,res)=>{
         }
     }
     catch (err) {
-        if (err instanceof HTTPError) {
-            return res.status(err.statusCode).send({ message: err.message });
-        }
+
         res.status(500).send(err.message);
     }
 
